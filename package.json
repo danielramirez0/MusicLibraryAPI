@@ -1,0 +1,25 @@
+{
+  "name": "musiclibraryapi",
+  "version": "1.0.0",
+  "description": "Backend API node.js for React front end",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danrezz/MusicLibraryAPI.git"
+  },
+  "author": "Daniel Ramirez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danrezz/MusicLibraryAPI/issues"
+  },
+  "homepage": "https://github.com/danrezz/MusicLibraryAPI#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "*",
+    "nodemon": "^2.0.7"
+  }
+}

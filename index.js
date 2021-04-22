@@ -1,31 +1,48 @@
+//create a Node.js and Express.js backend server for my React Music Library Project.
 const express = require("express");
 const repoContext = require("./repository/repository-wrapper");
 
 const app = express();
+const listenPort = 5000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-app.listen(3000, function () {
-  console.log("Server started. Listening on port 3000.");
+app.listen(5000, function () {
+  console.log(`Server started. Listening on port ${listenPort}.`);
 });
 
-app.get("/api/products", (req, res) => {
-  const products = repoContext.products.findAllProducts();
-  return res.send(products);
+app.get("/", (req, res) => {
+  return res.send("I'm listening");
 });
 
-app.get("/api/products/:id", (req, res) => {
+// Have a GET endpoint to retrieve all songs in my data storage.
+app.get("/api/songs", (req, res) => {
+  const songs = repoContext.songs.findAllSongs();
+  return res.send(songs);
+});
+
+// Have a GET endpoint to retrieve a specific song based off its “id” property.
+app.get("/api/songs/:id", (req, res) => {
   const id = req.params.id;
-  const product = repoContext.products.findProductById(id);
+  const product = repoContext.songs.findSongById(id);
   return res.send(product);
 });
 
-app.post("/api/products", (req, res) => {
-  const newProduct = req.body;
-  const addedProduct = repoContext.products.createProduct(newProduct);
-  return res.send(addedProduct);
+// Have a POST endpoint, so I can add a new song to the data set.
+app.post("/api/songs", (req, res) => {
+  const newSong = req.body;
+  const addedSong = repoContext.songs.createSong(newSong);
+  return res.send(addedSong);
 });
+/*
+//Have middleware validation for my POST endpoint to ensure data integrity.
 
+// Add a PUT endpoint to enable update CRUD functionality.
 app.put();
+// Add a DELETE endpoint to enable delete CRUD functionality.
 app.delete();
+
+// Test my API endpoints using Postman and export my request collection for submission with the project.
+// Follow backend API server best practices.
+// Connect my completed API server to my React Music Library project.
+*/
