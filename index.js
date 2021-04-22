@@ -24,25 +24,25 @@ app.get("/api/songs", (req, res) => {
 // Have a GET endpoint to retrieve a specific song based off its “id” property.
 app.get("/api/songs/:id", (req, res) => {
   const id = req.params.id;
-  const product = repoContext.songs.findSongById(id);
-  return res.send(product);
+  const song = repoContext.songs.findSongById(id);
+  return res.send(song);
 });
 
-// Have a POST endpoint, so I can add a new song to the data set.
+//TODO: Have a POST endpoint, so I can add a new song to the data set.
 app.post("/api/songs", (req, res) => {
   const newSong = req.body;
   const addedSong = repoContext.songs.createSong(newSong);
   return res.send(addedSong);
 });
 /*
-//Have middleware validation for my POST endpoint to ensure data integrity.
+//TODO:Have middleware validation for my POST endpoint to ensure data integrity.
 
-// Add a PUT endpoint to enable update CRUD functionality.
+//TODO: Add a PUT endpoint to enable update CRUD functionality.
 app.put();
-// Add a DELETE endpoint to enable delete CRUD functionality.
+//TODO: Add a DELETE endpoint to enable delete CRUD functionality.
 app.delete();
 
-// Test my API endpoints using Postman and export my request collection for submission with the project.
+// TODO:Test my API endpoints using Postman and export my request collection for submission with the project.
 // Follow backend API server best practices.
-// Connect my completed API server to my React Music Library project.
+// TODO:Connect my completed API server to my React Music Library project.
 */
