@@ -28,17 +28,22 @@ app.get("/api/songs/:id", (req, res) => {
   return res.send(song);
 });
 
-//TODO: Have a POST endpoint, so I can add a new song to the data set.
+// Have a POST endpoint, so I can add a new song to the data set.
 app.post("/api/songs", (req, res) => {
   const newSong = req.body;
   const addedSong = repoContext.songs.createSong(newSong);
   return res.send(addedSong);
 });
-/*
 //TODO:Have middleware validation for my POST endpoint to ensure data integrity.
 
 //TODO: Add a PUT endpoint to enable update CRUD functionality.
-app.put();
+app.put("/api/songs/:id", (req, res) => {
+  const id = req.params.id;
+  const songPropertiesToUpdate = req.body;
+  const updateSong = repoContext.songs.updateSong(id, songPropertiesToUpdate);
+  return res.send(updateSong);
+});
+/*
 //TODO: Add a DELETE endpoint to enable delete CRUD functionality.
 app.delete();
 
