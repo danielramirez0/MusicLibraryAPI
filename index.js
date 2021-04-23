@@ -36,16 +36,21 @@ app.post("/api/songs", (req, res) => {
 });
 //TODO:Have middleware validation for my POST endpoint to ensure data integrity.
 
-//TODO: Add a PUT endpoint to enable update CRUD functionality.
+// Add a PUT endpoint to enable update CRUD functionality.
 app.put("/api/songs/:id", (req, res) => {
   const id = req.params.id;
   const songPropertiesToUpdate = req.body;
   const updateSong = repoContext.songs.updateSong(id, songPropertiesToUpdate);
   return res.send(updateSong);
 });
+// Add a DELETE endpoint to enable delete CRUD functionality.
+app.delete("/api/songs/:id", (req, res) => {
+  const id = req.params.id;
+  const updatedDataSet = repoContext.songs.deleteSong(id);
+  return res.send(updatedDataSet);
+});
+
 /*
-//TODO: Add a DELETE endpoint to enable delete CRUD functionality.
-app.delete();
 
 // TODO:Test my API endpoints using Postman and export my request collection for submission with the project.
 // Follow backend API server best practices.
