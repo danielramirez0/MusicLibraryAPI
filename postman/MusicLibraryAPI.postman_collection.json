@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "5d5c15ef-b157-4ac7-92f3-3f0f96e5110f",
+		"name": "MusicLibraryAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Songs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/songs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"songs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Song",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Test Song\",\r\n    \"ablum\": \"Test Album\",\r\n    \"artist\": \"Test Artist\",\r\n    \"genre\": \"Test Genre\",\r\n    \"releaseDate\": \"Test Release Date\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/songs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"songs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Existing Song",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Changed Song\",\r\n    \"ablum\": \"Changed Album\",\r\n    \"artist\": \"Changed Artist\",\r\n    \"genre\": \"Changed Genre\",\r\n    \"releaseDate\": \"Changed Release Date\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/songs/26",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"songs",
+						"26"
+					]
+				},
+				"description": "Uses put request to make updates to existing key in database item."
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Song",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/songs/25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"songs",
+						"25"
+					]
+				},
+				"description": "Deletes a record"
+			},
+			"response": []
+		}
+	]
+}

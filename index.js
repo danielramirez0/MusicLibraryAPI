@@ -58,7 +58,5 @@ app.delete("/api/songs/:id", (req, res) => {
 
 /*
 
-// TODO:Test my API endpoints using Postman and export my request collection for submission with the project.
-// Follow backend API server best practices.
 // TODO:Connect my completed API server to my React Music Library project.
 */
